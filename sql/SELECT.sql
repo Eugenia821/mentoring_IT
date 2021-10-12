@@ -1,3 +1,4 @@
+--NOT WORKING THE LINE 9 - 
 SELECT [product_id],
        [product_name],
        [brand_id],
@@ -8,3 +9,15 @@ FROM [production].[products]
 WHERE [product_name] IN ('Sun%', '%Girl%')
       AND [list_price] <= 1000
       AND [category_id] IN (3, 6)
+
+--DID WITH 1 CONDITION - WORKING
+SELECT [product_id],
+       [product_name],
+       [brand_id],
+       [category_id],
+       [model_year],
+       [list_price]
+FROM [production].[products]
+WHERE [list_price] <= 1000
+      AND [product_name] LIKE 'Sun%'
+      AND [category_id] IN ('3', '6')
